@@ -1,0 +1,119 @@
+body {
+	background-color: rgba(0,0,0,1.0);
+	color: rgba(255,255,255,0.75);
+	font-family: "Bryant-RegularCondensed", sans-serif;
+	padding: 0;
+	margin: 0;
+	font-size: 18px;
+}
+
+a {
+	color: #FFCC00;
+	text-decoration: none;
+}
+
+h4 {
+	text-transform: uppercase;
+	font-size: 13px;
+	line-height: 24px;
+	font-weight: normal;
+	letter-spacing: 1px;
+	margin: 0 0 8px 0;
+	padding: 0 0 8px 0;
+}
+
+#page_wrap {
+	padding: 32px;
+	padding-top: 80px;			
+}
+
+#app_icon {
+	display: block;
+}
+
+ul {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+ol {
+	padding: 16px;
+}
+
+li {
+	padding: 0;
+	margin: 0;
+}
+
+ol li {
+	margin-bottom: 32px;
+}
+
+#toc li .header a {
+	display: block;
+	position: relative;
+	line-height: 32px;
+	border-bottom: 1px solid rgba(255,255,255,0.5);
+	margin-bottom: 16px;
+}
+
+#toc li .header a svg {
+	display: block;
+	width: 11px;
+	height: 11px;
+	position: absolute;
+	right: 0;
+	top: 9px;
+	fill: #ffcc00;
+}
+
+#toc li .header a svg.contract {
+	height: 1px;
+	top: 14px;
+	fill: rgba(255,255,255,0.5);			
+	opacity: 0;
+}
+
+#toc li .info {
+	display: none;
+}
+
+#toc li.showInfo .info {
+	display: block;
+}
+
+#toc li.showInfo .header a {
+	color: rgba(255,255,255,0.75);
+}
+
+#toc li.showInfo .header a svg.expand {
+	opacity: 0;
+}
+
+#toc li.showInfo .header a svg.contract {
+	opacity: 1;
+}
+
+#about {
+	padding-top: 80px;
+}
+
+#about .small {
+	margin: 48px 0 0 0;
+	padding: 32px 0;
+	border-top: 1px solid rgba(255,255,255,0.5);
+	font-size: 16px;
+}
+
+@media only screen and (min-width:400px) {
+	body {
+		font-size: 24px;
+	}
+	#about {
+		padding-top: 128px;
+	}
+	#about .small {
+		font-size: 18px;
+	}
+}

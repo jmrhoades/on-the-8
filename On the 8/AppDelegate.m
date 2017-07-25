@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "StyleKit.h"
+#import "Song.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +18,46 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    UIFont *font = [UIFont fontWithName:@"Bryant-RegularCondensed" size:21.f];
+    
+    [[UINavigationBar appearance] setTitleTextAttributes: @{ NSFontAttributeName:font, NSForegroundColorAttributeName:StyleKit.navBarTitleColor }];
+    [[UINavigationBar appearance] setBarTintColor:StyleKit.navBarBgColor];
+
+    NSDictionary *textAttributes = @{ NSFontAttributeName:font, NSForegroundColorAttributeName:StyleKit.yellow1 };
+    [[UIBarButtonItem appearance] setTitleTextAttributes:textAttributes forState:UIControlStateNormal];
+    
+    [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(-1000, -1000) forBarMetrics:UIBarMetricsDefault];
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    /*
+    NSArray *songs = [defaults arrayForKey:@"songs"];
+    if (songs == nil) {
+        NSMutableArray *tempArray = [[NSMutableArray alloc] init];
+        for(int i=0; i<128; i++) {
+            [tempArray addObject:@{@"title": @"", @"key": @""}];
+        }
+        [defaults setValue:tempArray forKey:@"songs"];
+        [defaults synchronize];
+    }
+    */
+    
+    NSArray *songsList = [defaults arrayForKey:@"songsList"];
+    if (songsList == nil) {
+        NSMutableArray *songsListArray = [[NSMutableArray alloc] init];
+        [defaults setValue:songsListArray forKey:@"songsList"];
+        [defaults synchronize];
+    }
+    
+    NSString *barCountUnit = [defaults stringForKey:@"barCountUnit"];
+    if (barCountUnit == nil) {
+        [defaults setValue:@"1" forKey:@"barCountUnit"];
+        [defaults synchronize];
+    }
+    
+    [[UIApplication sharedApplication] setIdleTimerDisabled:YES];
+
     return YES;
 }
 

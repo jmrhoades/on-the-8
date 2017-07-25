@@ -20,5 +20,11 @@
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>BryantPro-Medium.otf</string>
+		<string>Bryant-LightCondensed.otf</string>
+		<string>Bryant-RegularCondensed.otf</string>
+	</array>
 </dict>
 </plist>
